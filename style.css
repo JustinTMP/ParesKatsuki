@@ -1,0 +1,133 @@
+body{
+    background-color: orange;
+    padding: 0px;
+}
+
+.tablero{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  position: relative;
+  
+}
+
+.cuadrado{
+    box-sizing: border-box;
+    border-radius: 50%;
+    width:90px;
+    height:90px;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: #95c3df;
+    text-align: center;
+    padding: 5px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(img/xd.png);
+}
+
+.player-one,
+.player-two {
+    padding: 10px;
+    display: block;
+    font-size: 50px;
+}
+
+.player-one{
+    transform: rotate(180deg);
+    color: blue;
+}
+
+.player-two{
+    color: red;
+}
+
+.puntuacion-one{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    margin-bottom: 10px;
+}
+
+.puntuacion-two{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    margin-top: 7px;
+}
+
+.mensaje-win{
+    z-index: 10;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    color: orange;
+    
+}
+
+.opacidad{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+/* Inicialmente ocultamos el elemento */
+.hidden {
+  display: none;
+}
+
+/* Clase para la animación de entrada */
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Clase para la animación de salida */
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Clase que aplica la animación de entrada */
+.show {
+  display: block;
+  animation: zoomIn 0.5s forwards; 
+}
+
+/* Clase que aplica la animación de salida */
+.hide {
+  animation: zoomOut 0.5s forwards;
+}
